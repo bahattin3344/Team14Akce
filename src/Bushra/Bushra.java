@@ -9,7 +9,6 @@ public class Bushra {
     @Test
     public void Test1(){
         WebDriver driver=new ChromeDriver();
-
-
+        System.out.println();
     }
 }
