@@ -24,4 +24,5 @@ public class MasterClass {
                 throw new RuntimeException(e);
             }
         }
-}}
+}
+}
