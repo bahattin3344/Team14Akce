@@ -18,16 +18,17 @@ public class MasterClass {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)); // 30 saniye elementi bulma süresi verdik
         driver.get("https://www.akakce.com");
 
-        WebElement hesabım = driver.findElement(By.cssSelector("[id='HM_v8']>i>[rel='nofollow']")   );
-        hesabım.click();
+
+        WebElement hesabım = driver.findElement(By.cssSelector("[id='HM_v8']>i>[rel='nofollow']"));
+        hesabım.click();  // Hesabım Elementine Click
         MyFunction.wait(2);
         WebElement hesapSil=driver.findElement(By.cssSelector("[class='user']> :nth-child(5)"));
-        hesapSil.click();
+        hesapSil.click();  // Hesap Silme Elementine Click
         MyFunction.wait(2);
         WebElement sifreDogrulama=driver.findElement(By.cssSelector("[type='password']"));
-        sifreDogrulama.sendKeys("Deniz3344");
+        sifreDogrulama.sendKeys("Deniz3344");  // Şifre Doğrulama
         WebElement hesapSilBtn=driver.findElement(By.cssSelector("[value='Hesabımı sil']"));
-        hesapSilBtn.click();
+        hesapSilBtn.click();   // Hesap Sil Butonuna Basma
         MyFunction.wait(3);
         driver.quit();
 
