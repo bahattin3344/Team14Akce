@@ -14,6 +14,7 @@ import java.time.Duration;
 public class Bilgehan {
     @Test
     public void Test1(){
+
         WebDriver driver=new ChromeDriver();
         driver.manage().window().maximize(); // açılan ekranı tam ekran açmayı sağlıyor
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20)); // 30 saniyede chrome da sayfa açılmazsa kapat
