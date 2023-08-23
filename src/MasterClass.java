@@ -56,7 +56,7 @@ public class MasterClass {
         password.sendKeys("Techno123.");//şifreyi gönderme
 
 
-        MyFunc.wait(2);
+       MyFunc.wait(2);
         //Şifre tekrar
         WebElement password2 = driver.findElement(By.xpath("//input[@id='rnufp2']"));//şifre tekrar Elementi bulma
         password2.sendKeys("Techno123."); //şifreyi tekrar gönderme
@@ -112,40 +112,36 @@ public class MasterClass {
         //Hesap Aç onaylama
         WebElement btnHesapAc = driver.findElement(By.xpath("//input[@id='rfb']")); // Hesap Aç Elementi bulma
         aksiyonlar.moveToElement(btnHesapAc).click().build().perform(); //Hesap oluştur butonuna gitme,tıklama ve tamamlama
-        //MyFunc.wait(2);
+        MyFunc.wait(2);
 
         //Hesap duğrulama
         WebElement HesapDogrula = driver.findElement(By.xpath("//*[text()='Büşra']"));//Hesap adı Elementi bulma
         Assert.assertTrue("Hesap Oluşturma Başarısız",HesapDogrula.getText().contains("Büşra"));
         MyFunc.wait(2);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        //Oturum Kapatma
         WebElement profil = driver.findElement(By.xpath("//a[@title='Hesabım']"));
-        Action action2 = aksiyonlar.moveToElement(profil).build(); // profil sekmesine gelip bekliyoruz HOVER
+        Action action15 = aksiyonlar.moveToElement(profil).build(); // profil sekmesine gelip bekliyoruz HOVER
+        MyFunc.wait(2);
+        action15.perform();
+        WebElement btnÇık=driver.findElement(By.cssSelector("[id='HM_v8'] > ul > li:nth-child(5) > a"));
+         new Actions(driver).moveToElement(btnÇık).click().build().perform();
+         MyFunction.wait(2);
+         WebElement oturumAçma=driver.findElement(By.cssSelector("[id='H_rl_v8'] > a:nth-child(2)"));
+         oturumAçma.click();
+       MyFunction.wait(2);
+         WebElement eposta=driver.findElement(By.cssSelector("#life"));
+         eposta.sendKeys("busranur@gmail.com");
+        MyFunction.wait(2);
+        WebElement sifre=driver.findElement(By.cssSelector("#lifp"));
+        sifre.sendKeys("Techno123.");
+        MyFunction.wait(2);
+        WebElement girisYapBtn=driver.findElement(By.cssSelector("#lfb"));
+        girisYapBtn.click();
+       MyFunction.wait(4);
+        WebElement profil2 = driver.findElement(By.xpath("//a[@title='Hesabım']"));
+        Action action2 = aksiyonlar.moveToElement(profil2).build(); // profil sekmesine gelip bekliyoruz HOVER
+
         MyFunc.wait(2);
         action2.perform();
 
@@ -184,6 +180,7 @@ public class MasterClass {
         MyFunc.wait(2); // Mesaj kutusu kontrol edildi, hata varsa girilecek mesaj girildi.
         Assert.assertTrue("Mesaj kontrolü eşleşmedi...", mesajKontrolu.getText().equals("Listelenecek mesaj bulunamadı."));
         MyFunc.wait(2);
+
 
         WebElement hesabım = driver.findElement(By.cssSelector("[id='HM_v8']>i>[rel='nofollow']"));
         hesabım.click();  // Hesabım Elementine Click
