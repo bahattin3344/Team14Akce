@@ -164,15 +164,16 @@ public class MasterClass {
         Assert.assertTrue("Siparişler eşleşmedi...", siparislerKontrolu.getText().equals("Kayıtlı siparişiniz bulunmuyor."));
         MyFunc.wait(2);
 
-        WebElement profil2 = driver.findElement(By.xpath("//a[@title='Hesabım']"));
-        Action action5 = aksiyonlar.moveToElement(profil2).build(); // profil sekmesine gelip bekliyoruz HOVER
-        MyFunc.wait(2);
-        action5.perform();
+        driver.navigate().back(); // Navigate element ile geri dönüş sağladık
+      //  WebElement profil2 = driver.findElement(By.xpath("//a[@title='Hesabım']"));
+      //  Action action5 = aksiyonlar.moveToElement(profil2).build(); // profil sekmesine gelip bekliyoruz HOVER
+      //  MyFunc.wait(2);
+      //  action5.perform();
 
-        WebElement hesabim2 = driver.findElement(By.xpath("//a[text()='Hesabım']"));
-        Action action6 = aksiyonlar.moveToElement(hesabim2).click().build(); // Profil sekmesinin altındaki hesabıma tıkladı
-        MyFunc.wait(2);
-        action6.perform();
+      //  WebElement hesabim2 = driver.findElement(By.xpath("//a[text()='Hesabım']"));
+      //  Action action6 = aksiyonlar.moveToElement(hesabim2).click().build(); // Profil sekmesinin altındaki hesabıma tıkladı
+      //  MyFunc.wait(2);
+      //  action6.perform();
 
         WebElement mesajlarim = driver.findElement(By.xpath("//li[@class='order first']//a[text()='Mesajlarım']"));
         Action action7 = aksiyonlar.moveToElement(mesajlarim).click().build(); // mesajlarıma gelip tıkladı
