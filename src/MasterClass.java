@@ -144,6 +144,7 @@ public class MasterClass {
 
         MyFunc.wait(2);
         action2.perform();
+        MyFunction.wait(2);
 
         WebElement hesabim = driver.findElement(By.xpath("//a[text()='Hesabım']"));
         Action action3 = aksiyonlar.moveToElement(hesabim).click().build(); // Profil sekmesinin altındaki hesabıma tıkladı
